@@ -1,0 +1,19 @@
+<Application
+    x:Class="AvaloniaForEmbeddedLinuxTest.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="using:System"
+    RequestedThemeVariant="Default">
+    <Application.Resources>
+        <sys:Double x:Key="ScrollBarThickness">24</sys:Double>
+        <sys:Double x:Key="ScrollBarThumbThickness">16</sys:Double>
+    </Application.Resources>
+    
+    <Application.Styles>
+        <SimpleTheme />
+        
+        <Style Selector="TextBlock">
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+    </Application.Styles>
+</Application>
