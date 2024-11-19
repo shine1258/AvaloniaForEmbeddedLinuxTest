@@ -6,10 +6,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:AvaloniaForEmbeddedLinuxTest.ViewModels"
     d:DesignHeight="450" 
-    Background="HotPink"
     d:DesignWidth="800"
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
-    <ListBox HorizontalAlignment="Stretch" 
-             ItemsSource="{Binding NumInts}" />
+    <DockPanel>
+        <Slider HorizontalAlignment="Stretch" Value="{Binding Value}" DockPanel.Dock="Top"
+                Margin="0,12"/>
+        
+        <ListBox HorizontalAlignment="Stretch" ItemsSource="{Binding NumInts}" 
+                 SelectedItem="{Binding Value}" DockPanel.Dock="Bottom"/>
+    </DockPanel>
 </UserControl>

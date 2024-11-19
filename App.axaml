@@ -6,7 +6,10 @@
     RequestedThemeVariant="Default">
     <Application.Resources>
         <sys:Double x:Key="ScrollBarThickness">24</sys:Double>
-        <sys:Double x:Key="ScrollBarThumbThickness">16</sys:Double>
+        <sys:Double x:Key="ScrollBarThumbThickness">24</sys:Double>
+        
+        <Color x:Key="ThemeAccentColor">#FF119EDA</Color>  
+        <SolidColorBrush x:Key="ThemeAccentBrush" Color="{StaticResource ThemeAccentColor}" />
     </Application.Resources>
     
     <Application.Styles>
@@ -14,6 +17,23 @@
         
         <Style Selector="TextBlock">
             <Setter Property="FontSize" Value="24" />
+        </Style>
+        
+        <Style Selector="Slider:horizontal">
+            <Style Selector="^ /template/ Border#TrackBackground">
+                <Setter Property="Height" Value="8" />
+                <Setter Property="CornerRadius" Value="4" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Background" Value="{DynamicResource ThemeBorderLowBrush}" />
+            </Style>
+            
+            <Style Selector="^ /template/ Thumb#thumb">
+                <Setter Property="Template">
+                    <ControlTemplate>
+                        <Ellipse Width="24" Height="24" Fill="{DynamicResource ThemeAccentBrush}" />
+                    </ControlTemplate>
+                </Setter>
+            </Style>
         </Style>
     </Application.Styles>
 </Application>
